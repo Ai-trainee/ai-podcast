@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --background: 0 0% 100%;
+    --muted: 240 4.8% 95.9%;
+    --accent: 264 100% 50%;
+  }
+
+  body {
+    @apply antialiased text-gray-900 bg-[#fafafa];
+  }
+}
+
+@layer components {
+  .glass-effect {
+    @apply bg-white/80 backdrop-blur-lg border border-white/20;
+  }
+  
+  .hover-effect {
+    @apply transition-all duration-200 hover:scale-[1.02];
+  }
+  
+  .input-focus {
+    @apply focus:ring-2 focus:ring-violet-500 focus:border-transparent;
+  }
+}
+
+.gradient-bg {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(255, 255, 255, 0.9) 100%
+  );
+  backdrop-filter: blur(20px);
+}
+
+/* 自定义样式 */
+.range-slider {
+  @apply w-32 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer;
+}
+
+.range-slider::-webkit-slider-thumb {
+  @apply w-4 h-4 bg-black rounded-full appearance-none;
+}
+
+.range-slider::-moz-range-thumb {
+  @apply w-4 h-4 bg-black rounded-full border-0;
+}
+
+input[type="range"] {
+  @apply range-slider;
+}
+
+/* 添加导航栏样式 */
+.nav-link {
+  @apply text-gray-600 hover:text-gray-900 px-3 py-2 rounded-lg text-sm font-medium transition-colors;
+}
+
+.nav-link-active {
+  @apply text-violet-600 bg-violet-50;
+}
+
+/* 添加卡片悬浮效果 */
+.card-hover {
+  @apply transition-all duration-200 hover:shadow-lg hover:-translate-y-1;
+}
